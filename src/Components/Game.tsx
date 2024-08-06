@@ -15,7 +15,7 @@ const Game: React.FC = () => {
             <div>
                 <button onClick={() => dispatch({ type: ActionType.RESET })}>Reset Game</button>
                 <ol>
-                    {history.map((_, index) => (
+                    {history.length > 1 && history.map((_, index) => (
                         <li key={index}>
                             <button onClick={() => dispatch({ type: ActionType.UNDO, index })}>
                                 Go to {index === 0 ? "start" : `move #${index}`}
